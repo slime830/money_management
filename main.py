@@ -9,7 +9,7 @@ class Config:
         # 詳しくはMoneyCalculator側で説明
 
         # 要件系
-        self.PAYDAY = 20  # 書き換える
+        self.PAYDAY = 20  # 給料日 書き換える
         self.BASIC_SAVING_KEY = "basic saving"
         self.RENT_KEY = "rent"
         self.OUTPUT_TYPES_FILEPATH = "output_types.txt"
