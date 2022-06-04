@@ -83,6 +83,8 @@ Office （Excel）が無い ＆「Google スプレッドシートで管理する
 
   決算時は通常時に加えて、決算ファイル（`settlement.csv`）を出力する
 
+  期間中の決算は出来ない（給料日が 20 日なら、2000/05/20 までは決算出来ない）
+
 4. 実行結果
 
 - 標準出力
@@ -139,5 +141,5 @@ Office （Excel）が無い ＆「Google スプレッドシートで管理する
 - 決算ファイル
   ```
   10000000,basic saving
-  70000000,additional_saving
+  70000000,additional saving
   ```

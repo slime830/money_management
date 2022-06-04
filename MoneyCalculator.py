@@ -312,7 +312,7 @@ class MoneyCalculator:
 
         with open(self.SETTLEMENT_FILEPATH, "w", encoding=self.ENCODING) as f:
             f.write(f"{total_basic_saving},{self.BASIC_SAVING_KEY}\n")
-            f.write(f"{total_additional_saving},additional_saving")
+            f.write(f"{total_additional_saving},additional saving")
 
         print(
             f"あなたの累積追加貯金額は {nf.get_formatted_number(total_additional_saving)} 円です"

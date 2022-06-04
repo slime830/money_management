@@ -9,8 +9,7 @@ class Config:
         # 詳しくはMoneyCalculator側で説明
 
         # 要件系
-        self.PAYDAY = 20
-        self.BONUS_MONTHS = {6, 12}
+        self.PAYDAY = 20  # 書き換える
         self.BASIC_SAVING_KEY = "basic saving"
         self.RENT_KEY = "rent"
         self.OUTPUT_TYPES_FILEPATH = "output_types.txt"
