@@ -39,7 +39,6 @@ class MoneyCalculator:
 
         # 要件
         self.PAYDAY = config.PAYDAY  # 給料日
-        self.BONUS_MONTHS = config.BONUS_MONTHS  # ボーナス月（set)
         self.BASIC_SAVING_KEY = (
             config.BASIC_SAVING_KEY
         )  # 定期貯金のキー（output_types.txtより）
