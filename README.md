@@ -29,9 +29,9 @@ Office （Excel）が無い ＆「収入とかを Google ドライブ上で管�
 
 2. 管理する期間（以下の場合、2000 年 4 月の給与日～ 5 月の給与日前日）のディレクトリを、`YYYY_MM_MM`をコピーすることで作成
    ```bash
-   cp YYYY_MM_MM 2000_04_05
+   cp -r YYYY_MM_MM 2000_04_05
    ```
-3. 1 で作ったディレクトリの `income.txt` , `goal.txt` , `plan.csv` , `real_output.csv` に、それぞれ収入・目標追加貯金額・支出計画・実際の支出を記入する
+3. 1 で作ったディレクトリの `income.txt` , `additional_goal.txt` , `plan.csv` , `real_output.csv` に、それぞれ収入・目標追加貯金額・支出計画・実際の支出を記入する
 
    - `income.txt`
 
@@ -87,7 +87,7 @@ Office （Excel）が無い ＆「収入とかを Google ドライブ上で管�
 
   通常時は、計画分析ファイル（`plan_analyze_result.txt`）、項目別の支出棒グラフ（`output_by_type_bar.png`）を出力する。
 
-  決算時は通常時に加えて、決算ファイル（`settlement.csv`）を出力する
+  決算時は通常時に加えて、決算ファイル（`settlement.csv`）と次期間のディレクトリを出力する
 
   期間中の決算は出来ない（給料日が 20 日なら、2000/05/20 までは決算出来ない）
 
