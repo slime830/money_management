@@ -196,10 +196,10 @@ class MoneyCalculator:
             )
 
             print(
-                f"あなたの累積定期貯金額は {nf.get_formatted_number(self.last_basic_saving+self.plan_by_type.get(self.BASIC_SAVING_KEY))}円になる予定です。"
+                f"あなたの累積定期貯金額は {nf.get_formatted_number(self.last_basic_saving+self.plan_by_type.get(self.BASIC_SAVING_KEY))} 円になる予定です。"
             )
             f.write(
-                f"あなたの累積定期貯金額は {nf.get_formatted_number(self.last_basic_saving+self.plan_by_type.get(self.BASIC_SAVING_KEY))}円になる予定です。\n"
+                f"あなたの累積定期貯金額は {nf.get_formatted_number(self.last_basic_saving+self.plan_by_type.get(self.BASIC_SAVING_KEY))} 円になる予定です。\n"
             )
 
             print(
