@@ -33,7 +33,7 @@ Office （Excel）が無い ＆「収入とかを Google ドライブ上で管�
    月末が給料日なら、31 にする
 
 2. 管理する期間（以下の場合、2000 年 4 月の給与日～ 5 月の給与日前日）のディレクトリを、`YYYY_MM_MM`をコピーすることで作成
-   ```bash
+   ```sh
    cp -r YYYY_MM_MM 2000_04_05
    ```
 3. 1 で作ったディレクトリの `income.txt` , `additional_goal.txt` , `plan.csv` , `real_output.csv` に、それぞれ収入・目標追加貯金額・支出計画・実際の支出を記入する
@@ -84,13 +84,13 @@ Office （Excel）が無い ＆「収入とかを Google ドライブ上で管�
 
 - 通常時
 
-  ```bash
+  ```sh
   python3 main.py -t 2000_04_05
   ```
 
 - 決算時
 
-  ```bash
+  ```sh
   python3 main.py -t 2000_04_05 -s
   ```
 
