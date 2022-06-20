@@ -151,7 +151,7 @@ Office （Excel）が無い ＆「収入とかを Google ドライブ上で管�
   ```
 
 - 棒グラフ（`output_by_type_bar.png`）
-  ![棒グラフ](/misc/output_by_type_bar.png)
+  ![棒グラフ](./misc/output_by_type_bar.png)
 
 - 決算ファイル
   ```
