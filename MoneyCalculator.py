@@ -179,6 +179,10 @@ class MoneyCalculator:
         self.plan_additional_saving = self.income - self.plan_sum
 
         with open(self.RESULT_FILEPATH, "w", encoding=self.ENCODING) as f:
+            print(f"あなたは今期間で{nf.get_formatted_number(self.plan_sum)}円を使います。")
+            f.write(
+                f"あなたは今期間で{nf.get_formatted_number(self.plan_sum)}円を使います。\n")
+
             print(
                 f"あなたは{nf.get_formatted_number(self.plan_by_type.get(self.BASIC_SAVING_KEY))} 円"
                 + f"({round((self.plan_by_type.get(self.BASIC_SAVING_KEY)/self.income)*100)}%) を定期貯金します"
