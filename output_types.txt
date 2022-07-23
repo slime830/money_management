@@ -4,4 +4,5 @@ playing
 date
 training
 beauty
+investment
 extra
