@@ -19,78 +19,78 @@ class MoneyCalculator:
         self.terms = Terms(term)
 
         # ファイル読み込み用
-        self.income = None  # 今期間の収入
-        self.goal = None  # 目標貯金金額
-        self.last_basic_saving = None  # 前期間の収入
+        self.income = None                  # 今期間の収入
+        self.goal = None                    # 目標貯金金額
+        self.last_basic_saving = None       # 前期間の収入
         self.last_additional_saving = None  # 全期間時点での、貯金金額
-        self.plan_df = None  # 今期間の計画DataFrame
-        self.output_df = None  # 今期間の支出DataFrame
-        self.output_types = list()  # 支出項目
-        self.plan_by_type = dict()  # 項目と金額の対応（計画）
-        self.output_by_type = dict()  # 項目と金額の対応（支出）
+        self.plan_df = None                 # 今期間の計画DataFrame
+        self.output_df = None               # 今期間の支出DataFrame
+        self.output_types = None            # 支出項目
+        self.plan_by_type = None            # 項目と金額の対応（計画）
+        self.output_by_type = None          # 項目と金額の対応（支出）
 
         # planの詳細
-        self.plan_sum = None  # 計画の金額合計
+        self.plan_sum = None                # 計画の金額合計
         self.plan_additional_saving = None  # 計画によって生まれる貯金金額
 
         # 支出の詳細
-        self.output_sum = None  # 支出の合計金額
-        self.additional_saving = None  # 実際の貯金金額
+        self.output_sum = None              # 支出の合計金額
+        self.additional_saving = None       # 実際の貯金金額
 
         # 要件
-        self.PAYDAY = config.PAYDAY  # 給料日
+        self.PAYDAY = config.PAYDAY         # 給料日
         self.BASIC_SAVING_KEY = (
             config.BASIC_SAVING_KEY
-        )  # 定期貯金のキー（output_types.txtより）
+        )                                   # 定期貯金のキー（output_types.txtより）
 
         self.OUTPUT_TYPES_FILEPATH = (
             config.OUTPUT_TYPES_FILEPATH
-        )  # output_types.txtのパス
+        )                                   # output_types.txtのパス
         self.INCOME_FILEPATH = os.path.join(
             self.terms.current_term, config.INCOME_FILENAME
-        )  # 今期間のincome.txtのパス
+        )                                   # 今期間のincome.txtのパス
         self.GOAL_FILEPATH = os.path.join(
             self.terms.current_term, config.GOAL_FILENAME
-        )  # 今期間のgoal.txtのパス
+        )                                   # 今期間のgoal.txtのパス
         self.PLAN_FILEPATH = os.path.join(
             self.terms.current_term, config.PLAN_FILENAME
-        )  # 今期間のplan.csvのパス
+        )                                   # 今期間のplan.csvのパス
         self.REAL_OUTPUT_FILEPATH = os.path.join(
             self.terms.current_term, config.REAL_OUTPUT_FILENAME
-        )  # 今期間のoutput.csvのパス
+        )                                   # 今期間のoutput.csvのパス
 
         self.RESULT_FILEPATH = os.path.join(
             self.terms.current_term, config.RESULT_FILENAME
-        )  # 今期間のplan_analyze_result.txtのパス
+        )                                   # 今期間のplan_analyze_result.txtのパス
         self.BAR_FILEPATH = os.path.join(
             self.terms.current_term, config.BAR_FILENAME
-        )  # 今期間の棒グラフのパス
+        )                                   # 今期間の棒グラフのパス
         self.SETTLEMENT_FILEPATH = os.path.join(
             self.terms.current_term, config.SETTLEMENT_FILENAME
-        )  # 今期間のsettlement.csvのパス
+        )                                   # 今期間のsettlement.csvのパス
 
         self.NEXT_INCOME_FILEPATH = os.path.join(
             self.terms.next_term, config.INCOME_FILENAME
-        )  # 次期間のincome.txtのパス
+        )                                   # 次期間のincome.txtのパス
         self.NEXT_GOAL_FILEPATH = os.path.join(
             self.terms.next_term, config.GOAL_FILENAME
-        )  # 次期間のgoal.txtのパス
+        )                                   # 次期間のgoal.txtのパス
         self.NEXT_PLAN_FILEPATH = os.path.join(
             self.terms.next_term, config.PLAN_FILENAME
-        )  # 次期間のplan.csvのパス
+        )                                   # 次期間のplan.csvのパス
         self.NEXT_REAL_OUTPUT_FILEPATH = os.path.join(
             self.terms.next_term, config.REAL_OUTPUT_FILENAME
-        )  # 次期間のreal_output.txtのパス
+        )                                   # 次期間のreal_output.txtのパス
 
         self.LAST_SETTLEMENT_FILEPATH = os.path.join(
             self.terms.last_term, config.SETTLEMENT_FILENAME
-        )  # 前機関のsettlement.txtのパス
+        )                                   # 前期間のsettlement.txtのパス
 
-        self.FONT_SIZE = config.FONT_SIZE  # グラフ用のフォントサイズ
-        self.LINE_WIDTH = config.LINE_WIDTH  # グラフの幅
-        self.ENCODING = config.ENCODING  # 各ファイルの読み取り・書き込みのエンコーディング
+        self.FONT_SIZE = config.FONT_SIZE   # グラフ用のフォントサイズ
+        self.LINE_WIDTH = config.LINE_WIDTH # グラフの幅
+        self.ENCODING = config.ENCODING     # 各ファイルの読み取り・書き込みのエンコーディング
 
-        self.read_files()  # ファイルの読み込み
+        self.read_files()                   # ファイルの読み込み
 
     def __call__(self, settle_frag):
         # 一連の処理 実質のメイン関数
