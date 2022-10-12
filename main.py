@@ -44,6 +44,7 @@ if __name__ == "__main__":
         "--term",
         help="計算する期間（ディレクトリ名） yyyy_mm_mm形式 必須項目",
         type=str,
+        default="2000_01_02"
     )
     parser.add_argument(
         "-s",
